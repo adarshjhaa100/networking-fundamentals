@@ -1,0 +1,27 @@
+Before:
+
+Single machine contained and ran the software system (Monolith machine).
+
+Issues:
+- Required Beefy machines.
+- Users need to be physically present near the machines.     
+
+
+Client-Server Model: Divide the computer system into client and server, where:
+
+    Client:
+    - Is lightweight and performs small tasks.
+    - Possible to have the clients at multiple locations(cheaply).
+    - client calls the server with a set of standard procedure to execute         business logic.
+
+    Server:
+    - Runs complex, hw intensive code. Requires hardware with high specs.
+    - Can be centralized/ distributed.
+    - RPC standards for calling the business logic.
+
+    Communication:
+        Need a communication model bw client and the server for RPCs.
+
+        
+
+

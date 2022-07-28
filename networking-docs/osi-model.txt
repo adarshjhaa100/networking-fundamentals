@@ -1,0 +1,51 @@
+7 Layers of OSI:
+
+    Application - HTTP/FTP/gRPC
+    Presentation - Encoding/Serialization - converts data to byte string
+    Session - Establish/ Verify connection, TLS
+    Transport Layer - PORT, TCP/UDP (Data into segments)
+    Network layer - Routing, IP Address (Segment to packets)
+    Data link Layer - Frames, MAC Address of the internet, (Packets into frames- set of 0s and 1s)
+    Physical Layer - Conversion of Digital Signal to Electrcal/ Light/ Radio etc.
+
+Note: In real world scenarios, some of the layers mabe combined or skipped entirely while communication b/w two devices.
+
+
+e.g.: User sends HTTPS POST request ( with JSON body )
+
+    Application: POST https://example.com HTTPS {...body} 
+
+    Presentation: converts JSON request to flat byte string.
+        ("{...}"=>"/{.../}") 
+
+    Session: Establish connection with the receiver and maintain the connection.
+            - First connection is established with the receiver ( No data is forwarded during this time. )
+
+    Transport Layer: Send SYN request target PORT 443(HTTPS)
+
+    Network Layer: Add sender's address, receivers address, divide data into packets.
+
+    Data Link Layer: Divide data into frames and ADD MAC address.
+
+    Physical Layer: Send request to server. 
+
+
+In most situation, request goes through routers, switches, LBs, Firewalls etc. 
+
+    In all of the mentioned devices, there's a few level of OSI models' operation that they perform:
+        Switch (Layer1,2 - This is called layer 2 device because it works according to MAC )
+        Router (Layer 3 device - Network - Routing requires IP address so its a layer 3 device )
+        Firewall/Layer 4 LB (layer 4, requires transport layer for LB according to port/ restrict firewall - requires subnet range and port)
+        Layer 7 LB (LB according to resource path -- /images, /files etc. , /api1, /api2)
+
+
+e.g. client server thru diff devices:
+    Client (Layer 7)
+    -> Switch (Layer 2, Find MAC)
+    -> Router (Layer 3, Directs to destination IP)
+    -> Firewall (Layer 4, Restricts access From/To Specific IP/Port)
+    -> Load Balancer (Layer 4, DIstributes load among different ports)
+    -> Server (Layer 7)
+
+
+
