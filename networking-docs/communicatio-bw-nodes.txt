@@ -1,0 +1,26 @@
+Each node in a network contains a unique MAC address (this functionality is implemented using a network card).
+
+Direct communication bw two nodes network:
+
+
+If no system in place, Node-Node communication should take place as follows:
+- This approach requires layer 2 (Data Link. MAC) implementation .
+- Sender transmits message to all nodes. 
+- nodes whose MAC address matches the receiver's will further process.
+
+Issues with the above approach:
+- Issue with data security, connection exposed to all devices.
+- With millions of devices across the world, transmitting signals will cause a lot of delay.
+
+
+Use of network layer protocol(layer 3 protocol):
+- Use IP address to route connection between two nodes.
+- IP address = network address + host address
+- Router acts as a bridge between two different network.
+
+
+What if communication is between two process:
+- Need to use layer 4 protocol.
+- Each process at different port.
+
+
