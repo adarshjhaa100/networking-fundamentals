@@ -1,0 +1,69 @@
+IP Address:
+- Layer 3 protocol (network layer)
+- 4bytes in IPv4
+
+
+Network vs Host(Node in a network):
+
+IPv4 of the form a.b.c.d/x (x is the number of bits represents the network)
+possible number of hosts = 32-x (2 of which are reserved)
+
+e.g. : 192.168.0.1/24 - network address = 192.168.0, possible no of hosts: 2^(32-24) = 256
+
+Subnet Mask: 
+    Represents the bits that form the network(subnet): 
+    e.g. 255.255.255.0 = first 24 bits
+         255.255.254.0 = first 23 bits   
+
+    To check if 2 IP addresses are part of the same network,
+    IP1 & Subnet = IP2 & Subnet
+
+
+Gateway:
+
+- Gateway is used to connect outside of a network, one of the IPs out of the subnet is reserved for gateway.
+- In most situations, router is the gateway
+- Router has one gateway for each network its connected in.
+
+
+IP Packet:
+    SourceIP + Data + DestIP
+    The source and dest IP packet may change at each hop(across diff routers)
+
+    e.g. : A->R1->R2->b
+
+    let IP packet like: a|data|b
+    A->R1: A|data|R1
+    R1->R2: R1|data|R2
+    R2->B: R2|data|B
+
+    Need a routing table in this case to identify the actual path in case we want to send back data.
+    
+
+ICMP: 
+- Internet control message protocol (Layer 3)
+- Designed for info messages like:
+    port unreachable, host unreachable, packet expired etc.
+- Contains TTL: Time to live (No of hops available) which decrements at each router(or node in some case)
+- We can use TTL for traceroute( route from source to dest)
+
+ARP: 
+- Address resolution protocol
+- Layer 2
+- Maps IP address with MAC
+- ARP transmission is always local(within the same subnet)
+
+e.g.: A, B and C are devices in a network, A wants to connect with b
+A broadcasts the message to all devices including router(with dest IP of B),
+B responds and A saves the mac of B alongwith IP.
+
+
+Note: 
+    If we are connecting to outside network, the source IP of Packet changes to External IP of last router encountered.
+
+
+
+
+
+
+

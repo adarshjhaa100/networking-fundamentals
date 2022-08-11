@@ -1,0 +1,15 @@
+tcpdump: can be used to monitor protocols from layer 4 and below(2,3)
+
+
+ARP (Layer 2):
+
+sudo tcpdump -n -i  wlp1s0 arp -v
+
+where, -n: numeric flag, -i: interface, wlp1s0: interface for wlan
+
+
+ICMP (Layer 3):
+sudo tcpdump -n -i  wlp1s0 icmp -v
+
+
+
