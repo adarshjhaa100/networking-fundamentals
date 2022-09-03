@@ -1,0 +1,37 @@
+
+- Layer 4 protocol (Ports)
+- Stateless (No state is stored in the machines)
+- Communications bw two processes on different machines
+
+Use Cases:
+* Suitable where some of the data packet maybe lost at the cost of low latency
+
+- Video Streaming
+- VPN
+- DNS
+- Web RTC ( This is built in application layer for peer-to-peer communications)
+
+Note: Layer 4 protocols should not be exposed directly 
+
+
+Multiplexing/Demultiplexing:
+
+    Multiplex (Sender's End): Connection from multiple ports goes through the same channel in a UDP packet
+    Demux (Receiver's End): Connection from single channel is distributed among different ports.
+
+Simplified UDP Header:
+
+        Sender Port | Receiver Port
+
+UDP Datagram:
+    - Sender's and Receiver's Port (2 bytes each)
+    - Goes in as data in User's IP packet
+    - Data
+    - Length of Data
+
+Note: 
+    Every i'th later of OSI sends its datagram/config as data to i-1'th layer.
+
+
+
+
