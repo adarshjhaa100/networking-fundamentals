@@ -62,6 +62,17 @@ Note:
     If we are connecting to outside network, the source IP of Packet changes to External IP of last router encountered.
 
 
+Common Local IP Addresses:
+
+1) 10.0.0.0/8
+2) 172.16.0.0-172-31.255.255 - 172.16.0.0/12
+
+    172.0001(Network Address until this)-0000(These IP addresses will be host address).0.0
+
+3) 192.168.0.0/16
+
+
+
 
 
 
